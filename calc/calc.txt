@@ -1,0 +1,1637 @@
+<head>
+<script type="text/javascript" src="html2canvas.js"></script>
+<script type="text/javascript" src="jquery.maskedinput.js"></script>
+
+
+
+<style type="text/css">
+#xxx{
+	width:16px;
+	height:16px;
+	position:absolute;
+	top:10px;
+	right:12px;
+	cursor:pointer;
+	background-image: url(data:image/png;base64,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);
+}
+.CName{
+	text-indent: 0.3em;
+	position:absolute; 
+	left:183px; 
+	top:30px; 
+	width:170px; 
+	height:40px; 
+	text-align:left;
+}
+.CNameN::-moz-placeholder {
+    color: #cc0000;
+}
+.CNameN::-webkit-input-placeholder {
+    color: #cc0000;
+}
+.CNameN{	
+	text-indent: 0.3em;
+	position:absolute; 
+	left:183px; 
+	top:30px; 
+	width:170px; 
+	height:40px; 
+	text-align:left;
+}
+.EMail{
+	text-indent: 0.3em;
+	position:absolute; 
+	left:183px; 
+	top:94px; 
+	width:382px; 
+	height:40px; 
+	text-align:left;
+}
+.CPhon{
+	text-indent: 0.3em; 
+	position:absolute; 
+	left:370px; 
+	top:30px; 
+	width:195px; 
+	height:40px; 
+	text-align:left;
+}
+.CPhonN::-moz-placeholder {
+    color: #cc0000;
+}
+.CPhonN::-webkit-input-placeholder {
+    color: #cc0000;
+}
+.CPhonN{
+	text-indent: 0.3em; 
+	position:absolute; 
+	left:370px; 
+	top:30px; 
+	width:195px; 
+	height:40px; 
+	text-align:left;
+}
+.dark{
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: #000000;
+    opacity: 0.7;
+    z-index: 9990;
+	
+
+}
+.LP{
+	position:absolute;
+	top:0px;
+	right:0px;
+	width:620px;
+	height: 60px;
+	background:#EBEFF1;
+}
+#CalcMF{
+  position:relative;
+  height: 950px;
+  width: 670px;
+}
+#W1{
+	position:absolute;
+	margin:0px 0px;
+	width:85px;
+	height: 60px;
+	top:0px;
+	left:0px;
+	cursor:pointer;
+}
+#W2{
+	position:absolute;
+	margin:0px 0px;
+	width:90px;
+	height: 60px;
+	top:0px;
+	left:85px;
+	cursor:pointer;
+}
+#W3{
+	position:absolute;
+	margin:0px 0px;
+	width:120px;
+	height: 60px;
+	top:0px;
+	left:175px;
+	cursor:pointer;
+}
+#W4{
+	position:absolute;
+	margin:0px 0px;
+	width:75px;
+	height: 60px;
+	top:0px;
+	left:295px;
+	cursor:pointer;
+}
+#W5{
+	position:absolute;
+	margin:0px 0px;
+	width:170px;
+	height: 60px;
+	top:0px;
+	left:370px;
+	cursor:pointer;
+}
+#W6{
+	position:absolute;
+	margin:0px 0px;
+	width:80px;
+	height: 60px;
+	top:0px;
+	left:540px;
+	cursor:pointer;
+}
+.Text1{
+	position:absolute;
+	top:10px;
+	left:0px;
+	Width:60px;
+	height:60px;
+}
+.MF{
+    <!--border-style: solid;-->
+    position:absolute;
+	top:80px;
+	left:45px;
+	width:620px;
+    height:425px;
+}
+
+#draggableV { 
+	position:absolute;
+	left:-8px;
+}
+.handleV {
+        height:12px;
+	width:18px;
+	background:url(img/slider_handleV.png) no-repeat;
+	cursor:n-resize;
+}
+.handleG {
+	height:18px;
+	width:12px;
+	background:url(img/slider_handleG.png) no-repeat;
+	cursor:e-resize;
+}
+.SCMFV {
+	position:absolute;
+	background:url(img/slider_V.png) repeat-y;
+}
+.SCMFG {
+	position:absolute;
+	background:url(img/slider_G.png) repeat-x;
+}
+
+#draggableG{ 
+	position:absolute;
+}
+#draggableG_1{ 
+	position:absolute;
+}
+.handleG {
+	height:18px;
+	width:12px;
+
+}
+
+.BW1{
+	position:relative;;
+	top:100px;
+	left:260px;
+	width:163px;
+	height:310px;
+	border:2px solid #b0b4b6;
+}
+.BW2{
+	position:relative;;
+	top:100px;
+	left:190px;
+	width:316px;
+	height:310px;
+	border:2px solid #b0b4b6;
+}
+.BW3{
+	position:relative;
+	top:100px;
+	left:115px;
+	width:469px;
+	height:310px;
+	border:2px solid #b0b4b6;
+}
+.BW4{
+	position:relative;;
+	top:100px;
+	left:190px;
+	width:306px;
+	height:305px;
+	border:2px solid #b0b4b6;
+}
+.BW5{
+	position:relative;;
+	top:100px;
+	left:65px;
+	width:622px;
+	height:310px;
+	border:2px solid #b0b4b6;
+}
+.BW6{
+	position:absolute;
+	top:100px;
+	width:163px;
+	height:310px;
+	border:2px solid #b0b4b6;
+}
+.BW7{
+	position:absolute;
+	top:100px;
+	left:165px;
+	width:305px;
+	height:200px;
+	border:2px solid #b0b4b6;
+}
+.BW6_1{
+	position:absolute;
+	top:100px;
+	left:307px;
+	width:163px;
+	height:310px;
+	border:2px solid #b0b4b6;
+}
+.BW7_1{
+	position:absolute;
+	top:100px;
+	left:0px;
+	width:305px;
+	height:200px;
+	border:2px solid #b0b4b6;
+}
+#id_bwww{
+	position:relative;
+	width:465px;
+	margin:auto auto;
+}
+#id_bw1{
+	top:10px;
+	left:10px;
+}
+#id_bw2{
+	top:10px;
+	left:163px;
+}
+#id_bw3{
+	top:10px;
+	left:316px;
+}
+#id_bw4{
+	top:10px;
+	left:469px;
+}
+#id_bw5{
+	top:10px;
+	left:10px;
+}
+#id_bw6{
+	top:10px;
+	left:10px;
+}
+
+.BWIN1{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW1.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN2{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW2.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN3{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW3.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN4{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW4.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN5{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW5.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN1_1{
+	position:absolute;
+	width:139px;
+	height:198px;
+	background:url(img/BW1_1.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN1_2{
+	position:absolute;
+	width:139px;
+	height:198px;
+	background:url(img/BW1_2.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN1_3{
+	position:absolute;
+	width:139px;
+	height:198px;
+	background:url(img/BW1_3.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN1_4{
+	position:absolute;
+	width:139px;
+	height:198px;
+	background:url(img/BW1_4.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN1_5{
+	position:absolute;
+	width:139px;
+	height:198px;
+	background:url(img/BW1_5.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN3_1{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW3_1.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN3_2{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW3_2.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN3_3{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW3_3.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN3_4{
+	position:absolute;
+	width:143px;
+	height:290px;
+	background:url(img/BW3_4.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN4_1{
+	position:absolute;
+	width:285px;
+	height:180px;
+	background:url(img/BW4_1.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN4_2{
+	position:absolute;
+	width:285px;
+	height:180px;
+	background:url(img/BW4_2.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN4_3{
+	position:absolute;
+	width:285px;
+	height:180px;
+	background:url(img/BW4_3.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN4_4{
+	position:absolute;
+	width:285px;
+	height:180px;
+	background:url(img/BW4_4.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN4_5{
+	position:absolute;
+	width:285px;
+	height:180px;
+	background:url(img/BW4_5.png) no-repeat;
+	cursor:pointer;
+}
+#id_bw1_1{
+	top:97px;
+	left:10px;
+}
+#id_bw1_2{
+	top:97px;
+	left:155px;
+}
+#id_bw1_3{
+	top:10px;
+	left:10px;
+}
+.BWIN2_1{
+	position:absolute;
+	width:286px;
+	height:81px;
+	background:url(img/BW2_1.png) no-repeat;
+	cursor:pointer;
+}
+.BWIN2_2{
+	position:absolute;
+	width:286px;
+	height:81px;
+	background:url(img/BW2_2.png) no-repeat;
+	cursor:pointer;
+}
+
+.per1{
+    font-weight:bold;
+	display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+	text-align:center;
+	height:70px; 
+	width:123px;
+
+}
+.AR{
+	background:url(img/AR.png) no-repeat; 
+	position:absolute; 
+	top:25px; 
+	left:112px; 
+	height:20px; 
+	width:11px;
+	cursor:pointer; 
+
+}
+.AL{
+	background:url(img/AL.png) no-repeat; 
+	position:absolute; 
+	top:25px; 
+	left:00px; 
+	height:20px; 
+	width:11px;
+	cursor:pointer; 
+
+}
+</style>
+
+
+</head>
+<body>
+<div style="width:670px; position:relative;">
+
+<h1 align="center">Калькулятор окон в Киеве</h1>
+<h3 align="center">Быстрый расчет стоимости окна</h3>
+<h3 align="center">Советы по разумной экономии на установке пластиковых окон</h3>
+<p align="justify">Осуществите расчет стоимости пластиковых окон в режиме «онлайн»!</p>
+<p align="center"><strong>8 простых шагов к получению окна вашей мечты</strong></p>
+<ul>
+<li>Выберите тип конструкции</li>
+<li>Укажите размеры – ширину и высоту изделия</li>
+<li>Выберите тип открывания (тип створок)</li>
+<li>Выберите профиль</li>
+<li>Выберите тип стеклопакета</li>
+<li>Выберите фурнитуру</li>
+<li>Укажите дополнительные опции: подоконник, отлив, козырек и пр.</li> 
+<li>Отправьте заявку на расчет пластиковых окон</li>
+</ul>
+</div>
+<div id="CalcMF">
+  <div class="LP"> 
+    <div id="W1"  onmousedown="mousem(this)">
+      <div style="background:url(/img/W1.png) no-repeat;
+        position:relative;
+        width:45px;
+        height:50px;
+        margin:auto auto; 
+        top:5px;
+        left:auto;"> 
+      </div>
+    </div>
+    <div id="W2" onmousedown="mousem(this)">
+      <div style="background:url(/img/W2.png) no-repeat;
+        position:relative;
+        width:65px;
+        height:50px;
+        margin:auto auto; 
+        top:5px;
+        left:auto;">
+      </div>
+    </div>
+    <div id="W3" onmousedown="mousem(this)">
+      <div style="background:url(/img/W3.png) no-repeat;
+        position:relative;
+        width:95px;
+        height:50px;
+        margin:auto auto; 
+        top:5px;
+        left:auto;"> 
+      </div>
+    </div>
+    <div id="W4" onmousedown="mousem(this)">
+      <div style="background:url(/img/W4.png) no-repeat;
+        position:relative;
+        width:55px;
+        height:50px;
+        margin:auto auto; 
+        top:5px;
+        left:auto;">
+      </div>
+    </div>
+    <div id="W5" onmousedown="mousem(this)">
+      <div style="background:url(/img/W5.png) no-repeat;
+        position:relative;
+        width:125px;
+        height:50px;
+        margin:auto auto; 
+        top:5px;
+        left:auto;"> 
+      </div>
+    </div>
+    <div id="W6" onmousedown="mousem(this)">
+      <div style="background:url(/img/W6.png) no-repeat;
+        position:relative;
+        width:60px;
+        height:50px;
+        margin:auto auto; 
+        top:5px;
+        left:auto;"> 
+      </div>
+    </div>
+  </div> <!--Конец серого блока с маленькими окошками-->
+  <div class="Text1">
+    <P style=" font-family:OS4; font-size:14px; position:absolute; top:0px; left:3px;">Тип</P>
+    <P style=" font-family:OS4; font-size:14px; position:absolute; top:20px; left:0px;">окна:</P>
+  </div>
+
+<div class="MF" id="id_MF">
+</div>
+
+
+
+<script>
+
+  Win2();
+
+
+
+
+
+
+
+  function mousem(e)
+    {
+
+      document.getElementById("W1").setAttribute("style","background-color:#ebeff1;");
+      document.getElementById("W2").setAttribute("style","background-color:#ebeff1;");
+      document.getElementById("W3").setAttribute("style","background-color:#ebeff1;");
+      document.getElementById("W4").setAttribute("style","background-color:#ebeff1;");
+      document.getElementById("W5").setAttribute("style","background-color:#ebeff1;");
+      document.getElementById("W6").setAttribute("style","background-color:#ebeff1;");
+				
+      document.getElementById(e.id).setAttribute("style","background-color:#8bc43f;");
+				
+      if(e.id=="W1"){Win1()};
+      if(e.id=="W2"){Win2()};
+      if(e.id=="W3"){Win3()};
+      if(e.id=="W4"){Win4()};
+      if(e.id=="W5"){Win5()};	
+      if(e.id=="W6"){Win6()};	
+    }
+
+function Win1(){
+  document.getElementById("id_MF").innerHTML="<div class='BW1' id='id_bw'></div>";
+  document.getElementById("id_bw").innerHTML="<div class='BWIN1' onclick='cwin(this)' id='id_bw1'></div>";
+
+/*=======================Вертикальная линейка==================================================================*/	
+  document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:100px; left:210px; height:301px; width:10px;" id="SV1" class="SCMFV"><div id="draggableV" style="top:144px;" class="handleV"></div></div> ');
+  document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smax" style="font-family:OS4; font-size:12px; position:absolute; top:-3px; left:-40px;">1800</span)');
+  document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smin" style="font-family:OS4; font-size:12px; position:absolute; top:282px; left:-40px;">485</span)');
+  document.getElementById("SV1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKey(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:140px; left:-45px;" id="TextV" value='+Math.round((Math.round(document.getElementById("Smax").innerHTML)-Math.round(document.getElementById("Smin").innerHTML))/2+Math.round(document.getElementById("Smin").innerHTML))+'>' );
+  $(function() {  $( "#draggableV" ).draggable({containment:'parent', axis:'y', drag:function(e,ui){
+    var VMax=Math.round(document.getElementById("Smax").innerHTML);
+    var Vmin=Math.round(document.getElementById("Smin").innerHTML);
+    var Pos=parseInt(document.getElementById("draggableV").style.top);
+    var He=parseInt(document.getElementById("SV1").style.height)-12;
+    var Vcur=Math.round(((1-Pos/He)*(VMax-Vmin)+Vmin)/5)*5;
+    document.getElementById("TextV").value=Vcur;
+  } }); });
+/*=======================Конец вертикальной линейки==================================================================*/	
+
+/*=======================Горизонтальная линейка======================================================================*/
+  document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:240px; height:10px; width:201px;" id="SG1" class="SCMFG"><div id="draggableG" style="left:95px;" class="handleG"></div></div> ');
+  document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmax" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:170px;">1200</span)');
+  document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmin" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">485</span)');
+  document.getElementById("SG1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:85px;" id="TextG" value='+Math.round((Math.round(document.getElementById("SGmax").innerHTML)-Math.round(document.getElementById("SGmin").innerHTML))/2+Math.round(document.getElementById("SGmin").innerHTML))+'>' ); 	
+  $(function() {  $( "#draggableG" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+    var GMax=Math.round(document.getElementById("SGmax").innerHTML);
+    var Gmin=Math.round(document.getElementById("SGmin").innerHTML);
+    var GPos=parseInt(document.getElementById("draggableG").style.left);
+    var HeG=parseInt(document.getElementById("SG1").style.width)-12;
+    var Gcur=Math.round(((GPos/HeG)*(GMax-Gmin)+Gmin)/5)*5;
+    document.getElementById("TextG").value=Gcur;
+  } }); });
+/*=======================Конец горизонтальной линейки================================================================*/
+	
+/*=======================Переключатель типа створки================================================================*/	
+ec=document.getElementById("id_bw1");
+document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:285px;  "><div class="AL" onclick="Ccwin(ec)"></div><span id="TSTV1">поворотно-<br />откидное<br /> правое</span><div class="AR" onclick="cwin(ec)"></div></div>');
+/*=======================Конец переключателя типа створки==========================================================*/	
+
+
+}
+function Win2()
+{
+	document.getElementById("id_MF").innerHTML="<div class='BW2' id='id_bw'></div>";
+	document.getElementById("id_bw").innerHTML="<div class='BWIN5' onclick='cwin(this)' id='id_bw1'></div><div class='BWIN1' onclick='cwin(this)' id='id_bw2'></div>";
+	/*=======================Вертикальная линейка==================================================================*/	
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:100px; left:120px; height:301px; width:10px;" id="SV1" class="SCMFV"><div id="draggableV" style="top:144px;" class="handleV"></div></div> ');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smax" style="font-family:OS4; font-size:12px; position:absolute; top:-3px; left:-40px;">1800</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smin" style="font-family:OS4; font-size:12px; position:absolute; top:282px; left:-40px;">800</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKey(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:140px; left:-45px;" id="TextV" value='+Math.round((Math.round(document.getElementById("Smax").innerHTML)-Math.round(document.getElementById("Smin").innerHTML))/2+Math.round(document.getElementById("Smin").innerHTML))+'>' );
+
+	$(function() {  $( "#draggableV" ).draggable({containment:'parent', axis:'y', drag:function(e,ui){
+	var VMax=Math.round(document.getElementById("Smax").innerHTML);
+	var Vmin=Math.round(document.getElementById("Smin").innerHTML);
+	var Pos=parseInt(document.getElementById("draggableV").style.top);
+	var He=parseInt(document.getElementById("SV1").style.height)-12;
+	var Vcur=Math.round(((1-Pos/He)*(VMax-Vmin)+Vmin)/5)*5;
+	document.getElementById("TextV").value=Vcur;
+	} }); });
+	/*=======================Конец вертикальной линейки==================================================================*/	
+	/*=======================Горизонтальная линейка======================================================================*/
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:200px; height:10px; width:301px;" id="SG1" class="SCMFG"><div id="draggableG" style="left:155px;" class="handleG"></div></div> ');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmax" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:270px;">2000</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmin" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">800</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:145px;" id="TextG" value='+Math.round((Math.round(document.getElementById("SGmax").innerHTML)-Math.round(document.getElementById("SGmin").innerHTML))/2+Math.round(document.getElementById("SGmin").innerHTML))+'>' ); 	
+
+	$(function() {  $( "#draggableG" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+	var GMax=Math.round(document.getElementById("SGmax").innerHTML);
+	var Gmin=Math.round(document.getElementById("SGmin").innerHTML);
+	var GPos=parseInt(document.getElementById("draggableG").style.left);
+	var HeG=parseInt(document.getElementById("SG1").style.width)-12;
+	var Gcur=Math.round(((GPos/HeG)*(GMax-Gmin)+Gmin)/5)*5;
+	document.getElementById("TextG").value=Gcur;
+	} }); });
+	/*=======================Конец горизонтальной линейки================================================================*/
+	/*=======================Переключатель типа створки================================================================*/	
+	ec=document.getElementById("id_bw1");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:210px;  "><div class="AL" onclick="Ccwin(ec)"></div><span id="TSTV1">глухое</span><div class="AR" onclick="cwin(ec)"></div></div>');
+	/*=======================Конец переключателя типа створки==========================================================*/
+	/*=======================Переключатель типа створки=222============================================================*/	
+	ec2=document.getElementById("id_bw2");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:370px;  "><div class="AL" onclick="Ccwin(ec2)"></div><span id="TSTV2">поворотно-<br />откидное<br /> правое</span><div class="AR" onclick="cwin(ec2)"></div></div>');
+	/*=======================Конец переключателя типа створки=222======================================================*/				
+}
+function Win3()
+{
+	document.getElementById("id_MF").innerHTML="<div class='BW3' id='id_bw'></div>";
+	document.getElementById("id_bw").innerHTML="<div class='BWIN5' onclick='cwin(this)' id='id_bw1'></div><div class='BWIN1' onclick='cwin(this)' id='id_bw2'></div><div class='BWIN5' onclick='cwin(this)' id='id_bw3'></div>";
+	/*=======================Вертикальная линейка==================================================================*/	
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:100px; left:50px; height:301px; width:10px;" id="SV1" class="SCMFV"><div id="draggableV" style="top:144px;" class="handleV"></div></div> ');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smax" style="font-family:OS4; font-size:12px; position:absolute; top:-3px; left:-40px;">2700</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smin" style="font-family:OS4; font-size:12px; position:absolute; top:282px; left:-40px;">800</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKey(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:140px; left:-45px;" id="TextV" value='+Math.round((Math.round(document.getElementById("Smax").innerHTML)-Math.round(document.getElementById("Smin").innerHTML))/2+Math.round(document.getElementById("Smin").innerHTML))+'>' );
+
+	$(function() {  $( "#draggableV" ).draggable({containment:'parent', axis:'y', drag:function(e,ui){
+	var VMax=Math.round(document.getElementById("Smax").innerHTML);
+	var Vmin=Math.round(document.getElementById("Smin").innerHTML);
+	var Pos=parseInt(document.getElementById("draggableV").style.top);
+	var He=parseInt(document.getElementById("SV1").style.height)-12;
+	var Vcur=Math.round(((1-Pos/He)*(VMax-Vmin)+Vmin)/5)*5;
+	document.getElementById("TextV").value=Vcur;
+	} }); });
+	/*=======================Конец вертикальной линейки==================================================================*/	
+	/*=======================Горизонтальная линейка======================================================================*/
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:120px; height:10px; width:461px;" id="SG1" class="SCMFG"><div id="draggableG" style="left:225px;" class="handleG"></div></div> ');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmax" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:430px;">3000</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmin" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">1500</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:215px;" id="TextG" value='+Math.round((Math.round(document.getElementById("SGmax").innerHTML)-Math.round(document.getElementById("SGmin").innerHTML))/2+Math.round(document.getElementById("SGmin").innerHTML))+'>' ); 	
+
+	$(function() {  $( "#draggableG" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+	var GMax=Math.round(document.getElementById("SGmax").innerHTML);
+	var Gmin=Math.round(document.getElementById("SGmin").innerHTML);
+	var GPos=parseInt(document.getElementById("draggableG").style.left);
+	var HeG=parseInt(document.getElementById("SG1").style.width)-12;
+	var Gcur=Math.round(((GPos/HeG)*(GMax-Gmin)+Gmin)/5)*5;
+	document.getElementById("TextG").value=Gcur;
+	} }); });
+	/*=======================Конец горизонтальной линейки================================================================*/
+	/*=======================Переключатель типа створки================================================================*/	
+	ec=document.getElementById("id_bw1");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:130px;  "><div class="AL" onclick="Ccwin(ec)"></div><span id="TSTV1">глухое</span><div class="AR" onclick="cwin(ec)"></div></div>');
+	/*=======================Конец переключателя типа створки==========================================================*/
+	/*=======================Переключатель типа створки=222============================================================*/	
+	ec2=document.getElementById("id_bw2");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:290px;  "><div class="AL" onclick="Ccwin(ec2)"></div><span id="TSTV2">поворотно-<br />откидное<br /> правое</span><div class="AR" onclick="cwin(ec2)"></div></div>');
+	/*=======================Конец переключателя типа створки=222======================================================*/
+	/*=======================Переключатель типа створки=333============================================================*/	
+	ec3=document.getElementById("id_bw3");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:450px;  "><div class="AL" onclick="Ccwin(ec3)"></div><span id="TSTV3">глухое</span><div class="AR" onclick="cwin(ec3)"></div></div>');
+	/*=======================Конец переключателя типа створки=333======================================================*/								
+}
+
+function Win4()
+{
+	document.getElementById("id_MF").innerHTML="<div class='BW4' id='id_bw'></div>";
+	document.getElementById("id_bw").innerHTML="<div class='BWIN1_1' onclick='cwin2(this)' id='id_bw1_1'></div><div class='BWIN1_3' onclick='cwin2(this)' id='id_bw1_2'></div><div class='BWIN2_2' onclick='cwin3(this)' id='id_bw1_3'></div>";
+	/*=======================Вертикальная линейка==================================================================*/	
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:100px; left:130px; height:301px; width:10px;" id="SV1" class="SCMFV"><div id="draggableV" style="top:144px;" class="handleV"></div></div> ');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smax" style="font-family:OS4; font-size:12px; position:absolute; top:-3px; left:-40px;">2200</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smin" style="font-family:OS4; font-size:12px; position:absolute; top:282px; left:-40px;">1000</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKey(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:140px; left:-45px;" id="TextV" value='+Math.round((Math.round(document.getElementById("Smax").innerHTML)-Math.round(document.getElementById("Smin").innerHTML))/2+Math.round(document.getElementById("Smin").innerHTML))+'>' );
+
+	$(function() {  $( "#draggableV" ).draggable({containment:'parent', axis:'y', drag:function(e,ui){
+	var VMax=Math.round(document.getElementById("Smax").innerHTML);
+	var Vmin=Math.round(document.getElementById("Smin").innerHTML);
+	var Pos=parseInt(document.getElementById("draggableV").style.top);
+	var He=parseInt(document.getElementById("SV1").style.height)-12;
+	var Vcur=Math.round(((1-Pos/He)*(VMax-Vmin)+Vmin)/5)*5;
+	document.getElementById("TextV").value=Vcur;
+	} }); });
+	/*=======================Конец вертикальной линейки==================================================================*/	
+	/*=======================Горизонтальная линейка======================================================================*/
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:200px; height:10px; width:301px;" id="SG1" class="SCMFG"><div id="draggableG" style="left:155px;" class="handleG"></div></div> ');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmax" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:270px;">2000</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmin" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">800</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:145px;" id="TextG" value='+Math.round((Math.round(document.getElementById("SGmax").innerHTML)-Math.round(document.getElementById("SGmin").innerHTML))/2+Math.round(document.getElementById("SGmin").innerHTML))+'>' ); 	
+
+	$(function() {  $( "#draggableG" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+	var GMax=Math.round(document.getElementById("SGmax").innerHTML);
+	var Gmin=Math.round(document.getElementById("SGmin").innerHTML);
+	var GPos=parseInt(document.getElementById("draggableG").style.left);
+	var HeG=parseInt(document.getElementById("SG1").style.width)-12;
+	var Gcur=Math.round(((GPos/HeG)*(GMax-Gmin)+Gmin)/5)*5;
+	document.getElementById("TextG").value=Gcur;
+	} }); });
+
+	/*=======================Конец горизонтальной линейки================================================================*/	
+	/*=======================Переключатель типа створки================================================================*/	
+	ec=document.getElementById("id_bw1_1");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:210px;  "><div class="AL" onclick="Ccwin2(ec)"></div><span id="TSTV1">поворотно-<br />откидное</br>левое</span><div class="AR" onclick="cwin2(ec)"></div></div>');
+	/*=======================Конец переключателя типа створки==========================================================*/
+	/*=======================Переключатель типа створки=222============================================================*/	
+	ec2=document.getElementById("id_bw1_2");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:370px;  "><div class="AL" onclick="Ccwin2(ec2)"></div><span id="TSTV2">поворотно-<br />откидное<br /> правое</span><div class="AR" onclick="cwin2(ec2)"></div></div>');
+	/*=======================Конец переключателя типа створки=222======================================================*/				
+}
+
+function Win5()
+{
+	document.getElementById("id_MF").innerHTML="<div class='BW5' id='id_bw'></div>";
+	document.getElementById("id_bw").innerHTML="<div class='BWIN5' onclick='cwin(this)' id='id_bw1'></div><div class='BWIN3' onclick='cwin(this)' id='id_bw2'></div><div class='BWIN1' onclick='cwin(this)' id='id_bw3'></div><div class='BWIN5' onclick='cwin(this)' id='id_bw4'></div>";
+	/*=======================Вертикальная линейка==================================================================*/	
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:100px; left:50px; height:301px; width:10px;" id="SV1" class="SCMFV"><div id="draggableV" style="top:144px;" class="handleV"></div></div> ');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smax" style="font-family:OS4; font-size:12px; position:absolute; top:-3px; left:-40px;">2700</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smin" style="font-family:OS4; font-size:12px; position:absolute; top:282px; left:-40px;">1000</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKey(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:140px; left:-45px;" id="TextV" value='+Math.round((Math.round(document.getElementById("Smax").innerHTML)-Math.round(document.getElementById("Smin").innerHTML))/2+Math.round(document.getElementById("Smin").innerHTML))+'>' );
+
+	$(function() {  $( "#draggableV" ).draggable({containment:'parent', axis:'y', drag:function(e,ui){
+	var VMax=Math.round(document.getElementById("Smax").innerHTML);
+	var Vmin=Math.round(document.getElementById("Smin").innerHTML);
+	var Pos=parseInt(document.getElementById("draggableV").style.top);
+	var He=parseInt(document.getElementById("SV1").style.height)-12;
+	var Vcur=Math.round(((1-Pos/He)*(VMax-Vmin)+Vmin)/5)*5;
+	document.getElementById("TextV").value=Vcur;
+	} }); });
+	/*=======================Конец вертикальной линейки==================================================================*/	
+	/*=======================Горизонтальная линейка======================================================================*/
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:35px; height:10px; width:621px;" id="SG1" class="SCMFG"><div id="draggableG" style="left:305px;" class="handleG"></div></div> ');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmax" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:590px;">3900</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmin" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">2200</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:295px;" id="TextG" value='+Math.round((Math.round(document.getElementById("SGmax").innerHTML)-Math.round(document.getElementById("SGmin").innerHTML))/2+Math.round(document.getElementById("SGmin").innerHTML))+'>' ); 	
+
+	$(function() {  $( "#draggableG" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+	var GMax=Math.round(document.getElementById("SGmax").innerHTML);
+	var Gmin=Math.round(document.getElementById("SGmin").innerHTML);
+	var GPos=parseInt(document.getElementById("draggableG").style.left);
+	var HeG=parseInt(document.getElementById("SG1").style.width)-12;
+	var Gcur=Math.round(((GPos/HeG)*(GMax-Gmin)+Gmin)/5)*5;
+	document.getElementById("TextG").value=Gcur;
+	} }); });
+
+	/*=======================Конец горизонтальной линейки================================================================*/
+	/*=======================Переключатель типа створки================================================================*/	
+	ec=document.getElementById("id_bw1");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:85px;  "><div class="AL" onclick="Ccwin(ec)"></div><span id="TSTV1">глухое</span><div class="AR" onclick="cwin(ec)"></div></div>');
+	/*=======================Конец переключателя типа створки==========================================================*/
+	/*=======================Переключатель типа створки=222============================================================*/	
+	ec2=document.getElementById("id_bw2");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:245px;  "><div class="AL" onclick="Ccwin(ec2)"></div><span id="TSTV2">поворотно-<br />откидное</br>левое</span><div class="AR" onclick="cwin(ec2)"></div></div>');
+	/*=======================Конец переключателя типа створки=222======================================================*/
+	/*=======================Переключатель типа створки=333============================================================*/	
+	ec3=document.getElementById("id_bw3");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:405px;  "><div class="AL" onclick="Ccwin(ec3)"></div><span id="TSTV3">поворотно-<br />откидное<br /> правое</span><div class="AR" onclick="cwin(ec3)"></div></div>');
+	/*=======================Конец переключателя типа створки=333======================================================*/
+	/*=======================Переключатель типа створки=444============================================================*/	
+	ec4=document.getElementById("id_bw4");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:565px;  "><div class="AL" onclick="Ccwin(ec4)"></div><span id="TSTV4">глухое</span><div class="AR" onclick="cwin(ec4)"></div></div>');
+	/*=======================Конец переключателя типа створки=444======================================================*/														
+}
+
+function Win6()/*------------------------------Балконная дверь с окном-----------------------------------*/
+{
+	document.getElementById("id_MF").innerHTML="<div id='id_bwww'></div><button onclick='Win6_1(this)' style='font-family:OS4; font-size:14px; position:absolute; left:280px; top:310px;' ><Отразить></button>";
+	document.getElementById("id_bwww").innerHTML="<div class='BW6' id='id_bw'></div> <div class='BW7' id='id_bww'></div>";
+	document.getElementById("id_bw").innerHTML="<div class='BWIN3_1' onclick='cwin4(this)' id='id_bw5'></div>";
+	document.getElementById("id_bww").innerHTML="<div class='BWIN4_1' onclick='cwin5(this)' id='id_bw6'></div>";
+	/*=======================Вертикальная линейка==================================================================*/	
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:100px; left:60px; height:301px; width:10px;" id="SV1" class="SCMFV"><div id="draggableV" style="top:144px;" class="handleV"></div></div> ');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smax" style="font-family:OS4; font-size:12px; position:absolute; top:-3px; left:-40px;">2200</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smin" style="font-family:OS4; font-size:12px; position:absolute; top:282px; left:-40px;">1800</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKey(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:140px; left:-45px;" id="TextV" value='+Math.round((Math.round(document.getElementById("Smax").innerHTML)-Math.round(document.getElementById("Smin").innerHTML))/2+Math.round(document.getElementById("Smin").innerHTML))+'>' );
+
+	$(function() {  $( "#draggableV" ).draggable({containment:'parent', axis:'y', drag:function(e,ui){
+	var VMax=Math.round(document.getElementById("Smax").innerHTML);
+	var Vmin=Math.round(document.getElementById("Smin").innerHTML);
+	var Pos=parseInt(document.getElementById("draggableV").style.top);
+	var He=parseInt(document.getElementById("SV1").style.height)-12;
+	var Vcur=Math.round(((1-Pos/He)*(VMax-Vmin)+Vmin)/5)*5;
+	document.getElementById("TextV").value=Vcur;
+	} }); });
+	/*=======================Конец вертикальной линейки==================================================================*/
+	/*=======================Горизонтальная линейка=111==================================================================*/
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:110px; height:10px; width:181px;" id="SG1" class="SCMFG"><div id="draggableG" style="left:85px;" class="handleG"></div></div> ');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmax" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:150px;">900</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmin" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">600</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:75px;" id="TextG" value='+Math.round((Math.round(document.getElementById("SGmax").innerHTML)-Math.round(document.getElementById("SGmin").innerHTML))/2+Math.round(document.getElementById("SGmin").innerHTML))+'>' ); 	
+
+	$(function() {  $( "#draggableG" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+	var GMax=Math.round(document.getElementById("SGmax").innerHTML);
+	var Gmin=Math.round(document.getElementById("SGmin").innerHTML);
+	var GPos=parseInt(document.getElementById("draggableG").style.left);
+	var HeG=parseInt(document.getElementById("SG1").style.width)-12;
+	var Gcur=Math.round(((GPos/HeG)*(GMax-Gmin)+Gmin)/5)*5;
+	document.getElementById("TextG").value=Gcur;
+	} }); });
+	/*=======================Конец горизонтальной линейки=111============================================================*/	
+	/*=======================Горизонтальная линейка=222==================================================================*/
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:310px; height:10px; width:281px;" id="SG1_1" class="SCMFG"><div id="draggableG_1" style="left:135px;" class="handleG"></div></div> ');
+	document.getElementById("SG1_1").insertAdjacentHTML('beforeend','<span id="SGmax_1" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:250px;">1500</span)');
+	document.getElementById("SG1_1").insertAdjacentHTML('beforeend','<span id="SGmin_1" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">485</span)');
+	document.getElementById("SG1_1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG_1(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:125px;" id="TextG_1" value='+Math.round((Math.round(document.getElementById("SGmax_1").innerHTML)-Math.round(document.getElementById("SGmin_1").innerHTML))/2+Math.round(document.getElementById("SGmin_1").innerHTML))+'>' ); 	
+
+	$(function() {  $( "#draggableG_1" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+
+	var GMax_1=Math.round(document.getElementById("SGmax_1").innerHTML);
+	var Gmin_1=Math.round(document.getElementById("SGmin_1").innerHTML);
+	var GPos_1=parseInt(document.getElementById("draggableG_1").style.left);
+	var HeG_1=parseInt(document.getElementById("SG1_1").style.width)-12;
+	var Gcur_1=Math.round(((GPos_1/HeG_1)*(GMax_1-Gmin_1)+Gmin_1)/5)*5;
+	document.getElementById("TextG_1").value=Gcur_1;
+	} }); });
+	/*=======================Конец горизонтальной линейки=222============================================================*/			
+	/*=======================Переключатель типа створки================================================================*/	
+	ec=document.getElementById("id_bw5");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:140px;  "><div class="AL" onclick="Ccwin4(ec)"></div><span id="TSTV1">поворотно-<br />откидное</br>левое</span><div class="AR" onclick="cwin4(ec)"></div></div>');
+	/*=======================Конец переключателя типа створки==========================================================*/
+	/*=======================Переключатель типа створки=222============================================================*/	
+	ec2=document.getElementById("id_bw6");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:370px;  "><div class="AL" onclick="Ccwin5(ec2)"></div><span id="TSTV2">поворотно-<br />откидное<br /> правое</span><div class="AR" onclick="cwin5(ec2)"></div></div>');
+	/*=======================Конец переключателя типа створки=222======================================================*/
+}
+function Win6_1()/*------------------------------Балконная дверь с окном-----------------------------------*/
+{
+	document.getElementById("id_MF").innerHTML="<div id='id_bwww'></div><button onclick='Win6(this)' style='font-family:OS4; font-size:14px; position:absolute; left:280px; top:310px;' ><Отразить></button>";
+	document.getElementById("id_bwww").innerHTML="<div class='BW6_1' id='id_bw'></div> <div class='BW7_1' id='id_bww'></div>";
+	document.getElementById("id_bw").innerHTML="<div class='BWIN3_1' onclick='cwin4(this)' id='id_bw5'></div>";
+	document.getElementById("id_bww").innerHTML="<div class='BWIN4_1' onclick='cwin5(this)' id='id_bw6'></div>";
+	/*=======================Вертикальная линейка==================================================================*/	
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:100px; left:60px; height:301px; width:10px;" id="SV1" class="SCMFV"><div id="draggableV" style="top:144px;" class="handleV"></div></div> ');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smax" style="font-family:OS4; font-size:12px; position:absolute; top:-3px; left:-40px;">2200</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<span id="Smin" style="font-family:OS4; font-size:12px; position:absolute; top:282px; left:-40px;">1800</span)');
+	document.getElementById("SV1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKey(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:140px; left:-45px;" id="TextV" value='+Math.round((Math.round(document.getElementById("Smax").innerHTML)-Math.round(document.getElementById("Smin").innerHTML))/2+Math.round(document.getElementById("Smin").innerHTML))+'>' );
+
+	$(function() {  $( "#draggableV" ).draggable({containment:'parent', axis:'y', drag:function(e,ui){
+	var VMax=Math.round(document.getElementById("Smax").innerHTML);
+	var Vmin=Math.round(document.getElementById("Smin").innerHTML);
+	var Pos=parseInt(document.getElementById("draggableV").style.top);
+	var He=parseInt(document.getElementById("SV1").style.height)-12;
+	var Vcur=Math.round(((1-Pos/He)*(VMax-Vmin)+Vmin)/5)*5;
+	document.getElementById("TextV").value=Vcur;
+	} }); });
+	/*=======================Конец вертикальной линейки==================================================================*/	
+	/*=======================Горизонтальная линейка=111==================================================================*/
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:415px; height:10px; width:181px;" id="SG1" class="SCMFG"><div id="draggableG" style="left:85px;" class="handleG"></div></div> ');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmax" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:150px;">900</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<span id="SGmin" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">600</span)');
+	document.getElementById("SG1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:75px;" id="TextG" value='+Math.round((Math.round(document.getElementById("SGmax").innerHTML)-Math.round(document.getElementById("SGmin").innerHTML))/2+Math.round(document.getElementById("SGmin").innerHTML))+'>' ); 	
+
+	$(function() {  $( "#draggableG" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+	var GMax=Math.round(document.getElementById("SGmax").innerHTML);
+	var Gmin=Math.round(document.getElementById("SGmin").innerHTML);
+	var GPos=parseInt(document.getElementById("draggableG").style.left);
+	var HeG=parseInt(document.getElementById("SG1").style.width)-12;
+	var Gcur=Math.round(((GPos/HeG)*(GMax-Gmin)+Gmin)/5)*5;
+	document.getElementById("TextG").value=Gcur;
+	} }); });
+	/*=======================Конец горизонтальной линейки=111============================================================*/	
+	/*=======================Горизонтальная линейка=222==================================================================*/
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div style="top:500px; left:115px; height:10px; width:281px;" id="SG1_1" class="SCMFG"><div id="draggableG_1" style="left:135px;" class="handleG"></div></div> ');
+	document.getElementById("SG1_1").insertAdjacentHTML('beforeend','<span id="SGmax_1" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:250px;">1500</span)');
+	document.getElementById("SG1_1").insertAdjacentHTML('beforeend','<span id="SGmin_1" style="font-family:OS4; font-size:12px; position:absolute; top:20px; left:0px;">485</span)');
+	document.getElementById("SG1_1").insertAdjacentHTML('beforeend','<input type="text" onchange="TexlKeyG_1(this)" style="font-family:OS4; font-size:12px; position:absolute; width:30px; top:20px; left:125px;" id="TextG_1" value='+Math.round((Math.round(document.getElementById("SGmax_1").innerHTML)-Math.round(document.getElementById("SGmin_1").innerHTML))/2+Math.round(document.getElementById("SGmin_1").innerHTML))+'>' ); 	
+
+	$(function() {  $( "#draggableG_1" ).draggable({containment:'parent', axis:'x', drag:function(e,ui){
+
+	var GMax_1=Math.round(document.getElementById("SGmax_1").innerHTML);
+	var Gmin_1=Math.round(document.getElementById("SGmin_1").innerHTML);
+	var GPos_1=parseInt(document.getElementById("draggableG_1").style.left);
+	var HeG_1=parseInt(document.getElementById("SG1_1").style.width)-12;
+	var Gcur_1=Math.round(((GPos_1/HeG_1)*(GMax_1-Gmin_1)+Gmin_1)/5)*5;
+	document.getElementById("TextG_1").value=Gcur_1;
+	} }); });
+	/*=======================Конец горизонтальной линейки=222============================================================*/			
+	/*=======================Переключатель типа створки================================================================*/	
+	ec=document.getElementById("id_bw5");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:450px;  "><div class="AL" onclick="Ccwin4(ec)"></div><span id="TSTV1">поворотно-<br />откидное</br>левое</span><div class="AR" onclick="cwin4(ec)"></div></div>');
+	/*=======================Конец переключателя типа створки==========================================================*/
+	/*=======================Переключатель типа створки=222============================================================*/	
+	ec2=document.getElementById("id_bw6");
+	document.getElementById("id_MF").insertAdjacentHTML('beforeend','<div class="per1"  style="color:#9b9fa1; position:absolute; top:415px; left:220px;  "><div class="AL" onclick="Ccwin5(ec2)"></div><span id="TSTV2">поворотно-<br />откидное<br /> правое</span><div class="AR" onclick="cwin5(ec2)"></div></div>');
+	/*=======================Конец переключателя типа створки=222======================================================*/
+}
+function TexlKey(e)
+{
+  e.value = e.value.replace(/[^\d,]/g, '');
+  var VMax=Math.round(document.getElementById("Smax").innerHTML);
+  var Vmin=Math.round(document.getElementById("Smin").innerHTML);
+  if (e.value>VMax){e.value=VMax}
+  else{if(e.value<Vmin){e.value=Vmin}else{}}
+  var NewV=parseInt(document.getElementById(e.id).value);
+  var He=parseInt(document.getElementById("SV1").style.height)-12;
+  var Vcur=Math.round((1-(NewV-Vmin)/(VMax-Vmin))*He);
+  document.getElementById("draggableV").setAttribute("style","top:"+Vcur+"px;");
+}
+function TexlKeyG(e)
+{
+  e.value = e.value.replace(/[^\d,]/g, '');
+  var GMax=Math.round(document.getElementById("SGmax").innerHTML);
+  var Gmin=Math.round(document.getElementById("SGmin").innerHTML);
+  if (e.value>GMax){e.value=GMax}
+  else{if(e.value<Gmin){e.value=Gmin}else{}}
+  var NewGV=parseInt(document.getElementById(e.id).value);
+  var HeG=parseInt(document.getElementById("SG1").style.width)-12;
+  var Gcur=Math.round(((NewGV-Gmin)/(GMax-Gmin))*HeG);
+  document.getElementById("draggableG").setAttribute("style","left:"+Gcur+"px;");
+}
+
+function cwin(e)
+{
+  switch(document.getElementById(e.id).className) {
+   case "BWIN1":
+     document.getElementById(e.id).className="BWIN2"
+     switch(e.id){
+       case "id_bw1":
+         document.getElementById("TSTV1").innerHTML="поворотное правое";
+         break;
+       case "id_bw2":
+         document.getElementById("TSTV2").innerHTML="поворотное правое";
+	 break;
+       case "id_bw3":
+	 document.getElementById("TSTV3").innerHTML="поворотное правое";
+	 break;
+       default:
+         document.getElementById("TSTV4").innerHTML="поворотное правое";
+						}
+      break;
+    case "BWIN2":
+      document.getElementById(e.id).className="BWIN3"
+      switch(e.id){
+      case "id_bw1":
+        document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное</br>левое";
+        break;
+      case "id_bw2":
+	document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное</br>левое";
+	break;
+      case "id_bw3":
+	document.getElementById("TSTV3").innerHTML="поворотно-<br />откидное</br>левое";
+	break;
+      default:			
+	document.getElementById("TSTV4").innerHTML="поворотно-<br />откидное</br>левое";
+	       	}
+	break;
+    case "BWIN3":
+      document.getElementById(e.id).className="BWIN4"
+      switch(e.id){
+	case "id_bw1":
+	  document.getElementById("TSTV1").innerHTML="поворотное левое";
+	  break;
+	case "id_bw2":
+	  document.getElementById("TSTV2").innerHTML="поворотное левое";
+	  break;
+	case "id_bw3":
+	  document.getElementById("TSTV3").innerHTML="поворотное левое";
+	  break;
+	default:			
+	  document.getElementById("TSTV4").innerHTML="поворотное левое";
+		}
+    break;
+    case "BWIN4":
+      document.getElementById(e.id).className="BWIN5"
+      switch(e.id){
+	case "id_bw1":
+	  document.getElementById("TSTV1").innerHTML="глухое";
+	  break;
+	case "id_bw2":
+	  document.getElementById("TSTV2").innerHTML="глухое";
+	  break;
+	case "id_bw3":
+	  document.getElementById("TSTV3").innerHTML="глухое";
+	  break;
+	default:			
+	  document.getElementById("TSTV4").innerHTML="глухое";
+	  	}
+    break;
+    default:
+      document.getElementById(e.id).className="BWIN1"
+      switch(e.id){
+	case "id_bw1":
+	  document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное<br /> правое";
+	  break;
+	case "id_bw2":
+	  document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное<br /> правое";
+	  break;
+	case "id_bw3":
+	  document.getElementById("TSTV3").innerHTML="поворотно-<br />откидное<br /> правое";
+	  break;
+	default:			
+	  document.getElementById("TSTV4").innerHTML="поворотно-<br />откидное<br /> правое";
+		}		  
+	}
+}
+function Ccwin(e)
+{
+  switch(document.getElementById(e.id).className) {
+  case "BWIN1":
+    document.getElementById(e.id).className="BWIN5"
+    switch(e.id){
+	case "id_bw1":
+	  document.getElementById("TSTV1").innerHTML="глухое";
+	  break;
+	case "id_bw2":
+	  document.getElementById("TSTV2").innerHTML="глухое";
+	  break;
+	case "id_bw3":
+	  document.getElementById("TSTV3").innerHTML="глухое";
+	  break;
+	default:			
+	  document.getElementById("TSTV4").innerHTML="глухое";
+                }
+  break;
+case "BWIN2":
+  document.getElementById(e.id).className="BWIN1"
+  switch(e.id){
+    case "id_bw1":
+      document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное<br /> правое";
+      break;
+    case "id_bw2":
+      document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное<br /> правое";
+      break;
+    case "id_bw3":
+      document.getElementById("TSTV3").innerHTML="поворотно-<br />откидное<br /> правое";
+      break;
+    default:			
+      document.getElementById("TSTV4").innerHTML="поворотно-<br />откидное<br /> правое";
+    }		  
+break;
+  case "BWIN3":
+    document.getElementById(e.id).className="BWIN2"
+    switch(e.id){
+    case "id_bw1":
+      document.getElementById("TSTV1").innerHTML="поворотное правое";
+      break;
+    case "id_bw2":
+      document.getElementById("TSTV2").innerHTML="поворотное правое";
+      break;
+    case "id_bw3":
+      document.getElementById("TSTV3").innerHTML="поворотное правое";
+      break;
+    default:
+      document.getElementById("TSTV4").innerHTML="поворотное правое";
+    }
+  break;
+case "BWIN4":
+document.getElementById(e.id).className="BWIN3"
+switch(e.id){
+case "id_bw1":
+document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное</br>левое";
+break;
+case "id_bw2":
+document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное</br>левое";
+break;
+case "id_bw3":
+document.getElementById("TSTV3").innerHTML="поворотно-<br />откидное</br>левое";
+break;
+default:			
+document.getElementById("TSTV4").innerHTML="поворотно-<br />откидное</br>левое";
+}
+break;
+default:
+document.getElementById(e.id).className="BWIN4"
+switch(e.id){
+case "id_bw1":
+document.getElementById("TSTV1").innerHTML="поворотное левое";
+break;
+case "id_bw2":
+document.getElementById("TSTV2").innerHTML="поворотное левое";
+break;
+case "id_bw3":
+document.getElementById("TSTV3").innerHTML="поворотное левое";
+break;
+default:			
+document.getElementById("TSTV4").innerHTML="поворотное левое";
+}
+}
+}
+
+function cwin2(e)
+			{
+
+				switch(document.getElementById(e.id).className) {
+					case "BWIN1_1":
+						document.getElementById(e.id).className="BWIN1_2"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="поворотное левое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="поворотное левое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="поворотное левое";
+						}
+						break;
+					case "BWIN1_2":
+						document.getElementById(e.id).className="BWIN1_3"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное<br /> правое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное<br /> правое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="поворотно-<br />откидное<br /> правое";
+						}
+						break;
+					case "BWIN1_3":
+						document.getElementById(e.id).className="BWIN1_4"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="поворотное правое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="поворотное правое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="поворотное правое";
+						}		  
+						break;
+					case "BWIN1_4":
+						document.getElementById(e.id).className="BWIN1_5"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="глухое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="глухое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="глухое";
+						}		  
+						break;
+					default:
+						document.getElementById(e.id).className="BWIN1_1"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное</br>левое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное</br>левое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="поворотно-<br />откидное</br>левое";
+						}		  
+				}
+			}
+			function Ccwin2(e)
+			{
+
+				switch(document.getElementById(e.id).className) {
+					case "BWIN1_1":
+						document.getElementById(e.id).className="BWIN1_5"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="глухое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="глухое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="глухое";
+						}        break;
+					case "BWIN1_2":
+						document.getElementById(e.id).className="BWIN1_1"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное</br>левое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное</br>левое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="поворотно-<br />откидное</br>левое";
+						}        break;
+					case "BWIN1_3":
+						document.getElementById(e.id).className="BWIN1_2"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="поворотное левое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="поворотное левое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="поворотное левое";
+						}        break;
+					case "BWIN1_4":
+						document.getElementById(e.id).className="BWIN1_3"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное<br /> правое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное<br /> правое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="поворотно-<br />откидное<br /> правое";
+						}        break;
+					default:
+						document.getElementById(e.id).className="BWIN1_4"
+						switch(e.id){
+							case "id_bw1_1":
+								document.getElementById("TSTV1").innerHTML="поворотное правое";
+								break;
+							case "id_bw1_2":
+								document.getElementById("TSTV2").innerHTML="поворотное правое";
+								break;
+							default:			
+								document.getElementById("TSTV3").innerHTML="поворотное правое";
+						}	}
+			}
+			function cwin3(e)
+			{
+
+				switch(document.getElementById(e.id).className) {
+					case "BWIN2_1":
+						document.getElementById(e.id).className="BWIN2_2"
+						break;
+					default:
+						document.getElementById(e.id).className="BWIN2_1"
+				}
+			}
+			function cwin4(e)
+			{
+
+				switch(document.getElementById(e.id).className) {
+					case "BWIN3_1":
+						document.getElementById(e.id).className="BWIN3_2"
+						document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное<br /> правое";
+						break;
+					case "BWIN3_2":
+						document.getElementById(e.id).className="BWIN3_3"
+						document.getElementById("TSTV1").innerHTML="поворотное левое";		  
+						break;
+					case "BWIN3_3":
+						document.getElementById(e.id).className="BWIN3_4"
+						document.getElementById("TSTV1").innerHTML="поворотное правое";		  
+						break;
+						
+					default:
+						document.getElementById(e.id).className="BWIN3_1"
+						document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное</br>левое";		  
+				}
+			}
+			function Ccwin4(e)
+			{
+
+				switch(document.getElementById(e.id).className) {
+					case "BWIN3_1":
+						document.getElementById(e.id).className="BWIN3_4"
+						document.getElementById("TSTV1").innerHTML="поворотное правое";		  
+						break;
+					case "BWIN3_2":
+						document.getElementById(e.id).className="BWIN3_1"
+						document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное</br>левое";		  
+						break;
+					case "BWIN3_3":
+						document.getElementById(e.id).className="BWIN3_2"
+						document.getElementById("TSTV1").innerHTML="поворотно-<br />откидное<br /> правое";		  
+						break;
+						
+					default:
+						document.getElementById(e.id).className="BWIN3_3"
+						document.getElementById("TSTV1").innerHTML="поворотное левое";		  
+				}
+			}
+			function cwin5(e)
+			{
+
+				switch(document.getElementById(e.id).className) {
+					case "BWIN4_1":
+						document.getElementById(e.id).className="BWIN4_2"
+						document.getElementById("TSTV2").innerHTML="поворотное правое";		  
+						break;
+					case "BWIN4_2":
+						document.getElementById(e.id).className="BWIN4_3"
+						document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное</br>левое";			  
+						break;
+					case "BWIN4_3":
+						document.getElementById(e.id).className="BWIN4_4"
+						document.getElementById("TSTV2").innerHTML="поворотное левое";			  
+						break;
+					case "BWIN4_4":
+						document.getElementById(e.id).className="BWIN4_5"
+						document.getElementById("TSTV2").innerHTML="глухое";			  
+						break;
+						
+					default:
+						document.getElementById(e.id).className="BWIN4_1"
+						document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное<br /> правое";			  
+				}
+			}
+			function Ccwin5(e)
+			{
+
+				switch(document.getElementById(e.id).className) {
+					case "BWIN4_1":
+						document.getElementById(e.id).className="BWIN4_5"
+						document.getElementById("TSTV2").innerHTML="глухое";
+						break;
+					case "BWIN4_2":
+						document.getElementById(e.id).className="BWIN4_1"
+						document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное<br /> правое";
+						break;
+					case "BWIN4_3":
+						document.getElementById(e.id).className="BWIN4_2"
+						document.getElementById("TSTV2").innerHTML="поворотное правое";
+						break;
+					case "BWIN4_4":
+						document.getElementById(e.id).className="BWIN4_3"
+						document.getElementById("TSTV2").innerHTML="поворотно-<br />откидное</br>левое";
+						break;
+						
+					default:
+						document.getElementById(e.id).className="BWIN4_4"
+						document.getElementById("TSTV2").innerHTML="поворотное левое";		  
+				}
+			}
+
+
+
+function PrScr()
+{
+
+
+                                var re = /^\+38\(0[34569]\d{1}\)\d{3}-\d{2}-\d{2}$/;
+        			var myPhone = document.getElementById("phon1").value;
+        			var valid = re.test(myPhone);
+                
+                if(document.getElementById("Name1").value==""){
+		document.getElementById("Name1").className="CNameN";
+		document.getElementById("Name1").placeholder="Введите Ваше имя";
+	}
+	else{
+		if(valid==false){
+		document.getElementById("phon1").className="CPhonN";
+                $("#phon1").val("")
+		document.getElementById("phon1").placeholder="Номер некорректый";
+		}
+		else{
+
+_gaq.push(['_trackEvent', 'Button', 'Calc']);        //Цели для гугл
+                       
+yaCounter25476926.reachGoal('calc_submit_gazda.ua'); //Цели для яндекс
+   
+var time = new Date();
+    var d = {
+        day: time .getDate(),
+        month: (time .getMonth() + 1),
+        year: time .getFullYear(),
+        hour: time .getHours(),
+        minute: time .getMinutes(),
+        second: time .getSeconds()
+    }
+    var D = {};
+    for (var n in d) {
+        D[n] = (parseInt(d[n], 10) < 10 ) ? ('0'+d[n]) : (d[n]);
+    }
+    var TimeDate = D.day + '-' + D.month + '-' + D.year + '_' + D.hour + '-' + D.minute + '-' + D.second;
+
+         
+  //CallCl(document.getElementById("Name1").value, document.getElementById("phon1").value, "G_K", document.getElementById("EMail1").value, TimeDate); 
+ 
+			
+html2canvas(document.getElementById("CalcMF"), {onrendered: function(canvas) {var data = canvas.toDataURL('image/png').replace(/data:image\/png;base64,/, '');
+                        $.post('ajax.php',{ action: 'save',
+                            email: document.getElementById("EMail1").value,
+                            data: data, name: document.getElementById("Name1").value,
+                            tel: document.getElementById("phon1").value,
+                            timedate: TimeDate},function (data) { alert(data.message); },'json');
+                      
+                    }});
+                                dataLayer.push({'event': 'Button_calc'});  //для гугл аналитикс=    
+    		document.body.insertAdjacentHTML("beforeEnd","<div class='dark' id='iddark'></div>"); 
+			document.body.insertAdjacentHTML("beforeEnd","<div id='idw' style='position:fixed; left:50%; width:335px; height:185px; top:50%; z-index: 9995; background:#ebeff2; margin-top:-90px; margin-left:-167px; border-radius:3px;'><div id='xxx' onclick='rem()'></div><div style='position:absolute; left:50%; width:254px; height:106px; top:50%; background:#fdfffe; margin-top:-53px; margin-left:-127px; '><p style='font-family:OS4; font-size:16px; text-align:center;'><strong>Сообщение отправлено!</strong></br>Наш менеджер свяжется</br>с Вами в ближайшее время</p></div></div>");
+
+			
+		}
+		
+	}
+	
+}
+
+
+
+function MaskK()
+{
+   $("#phon1").mask('+38(999)999-99-99');
+}
+
+
+
+function rem()
+{
+ 	document.getElementById("iddark").remove(); 
+	document.getElementById("idw").remove(); 
+	document.getElementById("xxx").remove(); 
+
+}
+
+
+</script>
+  <select style="font-family:OS3; font-size:14px; position:absolute; top:550px; left:50px; border:5px solid #ebeff1; width:290px; height:35px;" class="styled-select">
+    <option selected="selected" value="Профиль">Профиль</option>
+    <option value="">REHAU Ecosol-Design 60 (3 камеры)</option>
+    <option value="">REHAU Ecosol-Design 70 (5 камер)</option>
+    <option value="">REHAU Ecosol-Design усиленный (5 камер)</option>
+    <option value="">REHAU Brillant-Design (5 камер)</option>
+    <option value="">REHAU Euro-Design 86 (6 камер)</option>
+    <option value="">REHAU GENEO (6 камер)</option>
+  </select>
+  <select style="font-family:OS3; font-size:14px; position:absolute; top:550px; left:380px; border:5px solid #ebeff1; width:290px; height:35px;" class="styled-select">
+    <option selected="selected" value="Стеклопакет">Стеклопакет</option>
+    <option value="">однокамерный</option>
+    <option value="">однокамерный энергосберегающий</option>
+    <option value="">однокамерный мультифункциональный</option>
+    <option value="">двухкамерный</option>
+    <option value="">двухкамерный энергосберегающий</option>
+    <option value="">двухкамерный мультифункциональный</option>
+  </select>
+  <select style="font-family:OS3; font-size:14px; position:absolute; top:590px; left:50px; border:5px solid #ebeff1; width:290px; height:35px;" class="styled-select">
+    <option selected="selected" value="Фурнитура">Фурнитура</option>
+    <option value="">Фурнитура Maco</option>
+    <option value="">Фурнитура SIEGENIA TITAN AF</option>
+    <option value="">Фурнитура AXOR</option>
+  </select>
+  <select style="font-family:OS3; font-size:14px; position:absolute; top:590px; left:380px; border:5px solid #ebeff1; width:290px; height:35px;" class="styled-select">
+    <option selected="selected" value="Подоконник">Подоконник</option>
+    <option value="">Не требуется</option>
+    <option value="">Подоконник 100 мм</option>
+    <option value="">Подоконник 150 мм</option>
+    <option value="">Подоконник 200 мм</option>
+    <option value="">Подоконник 250 мм</option>
+    <option value="">Подоконник 300 мм</option>
+    <option value="">Подоконник 350 мм</option>
+    <option value="">Подоконник 400 мм</option>
+    <option value="">Подоконник 450 мм</option>
+    <option value="">Подоконник 500 мм</option>
+    <option value="">Подоконник 600 мм</option>
+  </select>
+  <select style="font-family:OS3; font-size:14px; position:absolute; top:630px; left:50px; border:5px solid #ebeff1; width:290px; height:35px;" class="styled-select">
+    <option selected="selected" value="Отлив">Отлив</option>
+    <option value="">Не требуется</option>
+    <option value="">Отлив 70 мм</option>
+    <option value="">Отлив 100 мм</option>
+    <option value="">Отлив 130 мм</option>
+    <option value="">Отлив 150 мм</option>
+    <option value="">Отлив 180 мм</option>
+    <option value="">Отлив 200 мм</option>
+    <option value="">Отлив 250 мм</option>
+    <option value="">Отлив 300 мм</option>
+  </select>
+  <select  style="font-family:OS3; font-size:14px; position:absolute; top:630px; left:380px; border:5px solid #ebeff1; width:290px; height:35px;" class="styled-select">
+    <option selected="selected" value="Козырек">Козырек</option>
+    <option value="">Не требуется</option>
+    <option value="">Козырек 200 мм</option>
+    <option value="">Козырек 250 мм</option>
+    <option value="">Козырек 300 мм</option>
+    <option value="">Козырек 350 мм</option>
+    <option value="">Козырек 400 мм</option>
+    <option value="">Козырек 450 мм</option>
+    <option value="">Козырек 500 мм</option>
+  </select>
+
+  <P style=" position:absolute; font-family:OS3; font-size:14px; position:absolute; top:75px; left:50px;">Количество (шт.)</P>
+  <input type="text" value="1" style="font-family:OS4; font-size:14px; position:absolute; left:165px; top:65px; width:40px; height:20px; border:5px solid #ebeff1; text-align:center; " />
+		
+  <P style=" position:absolute; font-family:OS3; font-size:14px; position:absolute; top:75px; left:330px;">Демонтаж / монтаж</P>
+  <select  style="font-family:OS3; font-size:14px; position:absolute; top:65px; left:460px; border:5px solid #ebeff1; width:60px; height:32px;" class="styled-select" >
+    <option selected="selected" value="Да">Да</option>
+    <option value="">Нет</option>
+  </select>
+
+
+<div style="position:absolute;; top:680px; left:60px; width:594px; height:240px; background:url(img/Form.png) no-repeat;">
+  <div  class="Mb" style="position:absolute; top:164px; left:183px; background: #fd8312; width:384px; height:44px; text-align:center; line-height:44px; color:#ffffff; cursor:pointer; font-size:11pt; border-radius: 3px;" onclick='PrScr(this)'>-РАССЧИТАТЬ СТОИМОСТЬ ОКНА-</div>
+
+<input  style="font-family:OS3; font-size:14px; " type="text" id="Name1" class="CName" placeholder="Имя"/>
+<input  style="font-family:OS3; font-size:14px; " type="email" id="EMail1" class="EMail" placeholder="Email" required/>
+<input  style="font-family:OS3; font-size:14px; " type="text" id="phon1" class="CPhon" placeholder="Телефон" onclick="MaskK()"/>
+
+
+</div>
+
+
+
+</div>
+<divstyle="width:670px; position:relative;">
+<p align="center">*Расчет окна онлайн не обязывает вас к оформлению заказа. Узнайте, сколько стоит окно вашей мечты – и запланируйте покупку на ближайшее время!</p>
+
+<h3 align="center">Секреты выбора правильного пластикового окна</h3>
+
+<h4 align="left">ПВХ-профиль</h4>
+
+Чем больше в ПВХ-профиле воздушных камер, тем лучше сохраняется тепло в доме. Оптимальный вариант для климатических условий нашей страны – пятикамерные системы. Трехкамерные системы подходят для установки в нежилых помещениях. Толщина внешних стенок профиля должна быть не менее 3 мм. 
+
+<h4 align="left">Стеклопакет</h4>
+
+Звуко- и теплоизоляция в вашем доме в значительной степени зависят от количества стекол в стеклопакете. Чем их больше, тем, соответственно, лучше изоляция от уличного шума и сохранение тепла в помещении. Кроме того, важно определиться с видом стекла. В данном вопросе все зависит от поставленных задач: 
+<ul>
+<li>закаленное стекло характеризуется повышенной прочностью к перепадам температур и ударам;</li>
+<li>энергосберегающее – сохраняет тепло;</li>
+<li>армированное – отличается высокой пожаростойкостью.</li> 
+</ul>
+
+<h4 align="left">Фурнитура</h4>
+
+Фурнитура выполняет множество функций: открывание, закрывание, микропроветривание, откидывание, защита от взлома и пр. Поэтому ее качество играет важную роль. Компания ГАЗДА® Экосберегающие окна комплектует свои окна фурнитурой известных мировых производителей: австрийской MACO и немецкой SIEGENIA TITAN AF, которые уже давно зарекомендовала себя как одни из самых высококачественных и надежных на европейском рынке.
+
+
+
+
+<h3 align="center">Как потратить меньше денег при заказе металлопластикового окна</h3>
+<img align="middle" src="/img/eco1.png" width="670" height="258" alt="На чем стоит экономить">
+
+Чтобы окно прослужило как можно дольше, выбирайте стеклопакет, ПВХ-профиль и фурнитуру от известных и надежных производителей.
+
+<h3 align="center">Узнайте, как оптимизировать расходы на покупке металлопластиковых окон!</h3> 
+
+<div class="js-callbacktitle" style="margin:auto; text-align:center; background-color:#8bc43f; margin-top:30px; width:600px; height:50px;line-height:50px; color: #ffffff; border-radius: 3px; cursor: pointer;">-ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ-</div>
+
+
+
+
+<h3 align="center">Почему вам стоит воспользоваться нашим калькулятором пластиковых окон?</h3>
+
+Компания ГАЗДА® Экосберегающие окна изготавливает окна из комплектующих известных европейских производителей на высокотехнологичном современном оборудовании. Все это гарантирует безупречное качество продукции. 
+
+Мы являемся производителями, поэтому осуществляем прямые продажи, минуя цепочку посредников. Компания ГАЗДА® Экосберегающие окна готова предложить вам самые выгодные варианты окон, изготовление изделий в сжатые сроки и предоставление всех необходимых сертификатов. 
+
+Мы всегда рады пойти навстречу покупателю и подобрать оптимальный вариант комплектации без потери качества товара. Даже металлопластиковые окна в самой простой комплектации, подобранные нашими менеджерами, способны удовлетворить требования в должном уровне комфорта, функциональности и надежности. 
+
+<p align="center"><strong>Хотите получить максимально точный расчет металлопластиковых окон?<br />
+Звоните нам прямо сейчас!</strong></p>
+
+
+</div>
+
+
+
+
+
+
+</body>
