@@ -254,8 +254,8 @@ class SiteController extends Controller
         $client = new \SoapClient('http://turbosms.in.ua/api/wsdl.html');
         // Данные авторизации
         $auth = Array (
-            'login' => 'sadmin',
-            'password' => '902004'
+            'login' => '',
+            'password' => ''
         );
         // Авторизируемся на сервере
         $result = $client->Auth ($auth);
